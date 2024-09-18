@@ -1146,9 +1146,9 @@ const message = {
 }
 
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 
-app.use(express.static(path.join(__dirname, 'Assets')));
+app.use(express.static(path.join(__dirname, './Assets')));
 
 app.get('/', (req, res) => {
   res.redirect('/deface(04).html');
@@ -1158,7 +1158,7 @@ app.listen(port, () => {
   console.log(chalk.green(`Port ${port} is open`))
 })
 
-let isRunning = false
+let isRunning = true
 startalpha()
 
 let file = require.resolve(__filename)
