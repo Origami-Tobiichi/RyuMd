@@ -1151,13 +1151,13 @@ const message = {
 
 //const app = express()
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 
 
 app.get('/', (req, res) => {
 
-  res.send('Hello Globe!')
+  res.send('Hello Ryuzaki!!!')
 
 })
 
@@ -1165,7 +1165,7 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
 
-  console.log(`GLOBAL-MD is listening on port ${port}`)
+  console.log(`RyuMd is listening on port ${port}`)
 
 })
 startalpha()
