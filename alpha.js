@@ -7,7 +7,7 @@
 */
 require('./settings')
 //berikut adalah kode uptime robot untuk replit (buat yang paham aja)
-require("http").createServer((_, res) => res.end("Uptime!")).listen(3000)
+require("http").createServer((_, res) => res.end("Uptime!")).listen(4000)
 
 const {
    default: alphaConnect,
