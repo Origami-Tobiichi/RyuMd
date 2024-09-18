@@ -1147,27 +1147,23 @@ const message = {
 
 
 
-//const express = require('express')
+const app = express()
+const port = process.env.PORT || 5000
 
-//const app = express()
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const port = process.env.PORT || 3000;
-
-
+app.use(express.static(path.join(__dirname, 'Assets')));
 
 app.get('/', (req, res) => {
-
-  res.send('Hello Ryuzaki!!!')
-
-})
-
-
+  res.redirect('/deface(04).html');
+});
 
 app.listen(port, () => {
-
-  console.log(`RyuMd is listening on port ${port}`)
-
+  console.log(chalk.green(`Port ${port} is open`))
 })
+
+let isRunning = false
 startalpha()
 
 let file = require.resolve(__filename)
