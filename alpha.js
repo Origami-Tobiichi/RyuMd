@@ -1146,19 +1146,22 @@ const message = {
 }
 
 
-const port = process.env.PORT || 3000
-
-app.use(express.static(path.join(__dirname, './Assets')));
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.redirect('/deface(04).html');
-});
 
-app.listen(port, () => {
-  console.log(chalk.green(`Port ${port} is open`))
+  res.send('Hello Ryuuzaki!!!')
+
 })
 
-let isRunning = true
+
+
+app.listen(port, () => {
+
+  console.log(`RyuMd is listening on port ${port}`)
+
+})
+
 startalpha()
 
 let file = require.resolve(__filename)
