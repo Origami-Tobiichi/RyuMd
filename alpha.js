@@ -1133,6 +1133,7 @@ const message = {
    }
 
    return alpha
+   
    async function getMessage(WAMessageKey) {
 		if(store) {
 			const msg = await store.loadMessage(key.remoteJid, key.id)
@@ -1145,23 +1146,17 @@ const message = {
 
 }
 
-
-const port = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
-
-  res.send('Hello Ryuuzaki!!!')
-
+  res.send('Hello Globe!')
 })
-
-
 
 app.listen(port, () => {
-
-  console.log(`RyuMd is listening on port ${port}`)
-
+  console.log(`GLOBAL-MD is listening on port ${port}`)
 })
-
 startalpha()
 
 let file = require.resolve(__filename)
