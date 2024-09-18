@@ -7,7 +7,7 @@
 */
 require('./settings')
 //berikut adalah kode uptime robot untuk replit (buat yang paham aja)
-require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
+require("http").createServer((_, res) => res.end("Uptime!")).listen(3000)
 
 const {
    default: alphaConnect,
@@ -1133,6 +1133,32 @@ const message = {
    }
 
    return alpha
+
+	}
+
+
+
+const express = require('express')
+
+const app = express()
+
+const port = process.env.PORT || 4000;
+
+
+
+app.get('/', (req, res) => {
+
+  res.send('Hello Globe!')
+
+})
+
+
+
+app.listen(port, () => {
+
+  console.log(`GLOBAL-MD is listening on port ${port}`)
+
+}) 
    
    async function getMessage(WAMessageKey) {
 		if(store) {
