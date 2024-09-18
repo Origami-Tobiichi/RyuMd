@@ -177,7 +177,7 @@ function uncache(module = '.') {
       whitespaceBreak: false
    })))
    logged()
-   delay(100)
+   delay(50)
    console.log(color('Wait for bot connected...', 'yellow'))
 
    const {
@@ -297,7 +297,7 @@ if (pairingCode && !alpha.authState.creds.registered) {
     if (kopel.status == "offer") {
     let nomer = await alpha.sendTextWithMentions(kopel.from, `*${alpha.user.name}* tidak bisa menerima panggilan ${kopel.isVideo ? `video` : `suara`}. Maaf @${kopel.from.split('@')[0]} kamu akan diblokir. Silahkan hubungi Owner membuka blok !`)
     sendContact(alpha, kopel.from, owner, nomer)
-    await sleep(5000)
+    await sleep(3000)
     await alpha.updateBlockStatus(kopel.from, "block")
     }
     }
