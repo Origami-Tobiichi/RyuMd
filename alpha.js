@@ -1133,8 +1133,17 @@ const message = {
    }
 
    return alpha
-
+   async function getMessage(WAMessageKey) {
+		if(store) {
+			const msg = await store.loadMessage(key.remoteJid, key.id)
+			return msg?.message || undefined
+		}
+		
+		// only if store is present
+		return proto.Message.fromObject({})
 	}
+
+}
 
 
 
@@ -1158,19 +1167,7 @@ app.listen(port, () => {
 
   console.log(`GLOBAL-MD is listening on port ${port}`)
 
-}) 
-   
-   async function getMessage(WAMessageKey) {
-		if(store) {
-			const msg = await store.loadMessage(key.remoteJid, key.id)
-			return msg?.message || undefined
-		}
-		
-		// only if store is present
-		return proto.Message.fromObject({})
-	}
-
-}
+})
 startalpha()
 
 let file = require.resolve(__filename)
